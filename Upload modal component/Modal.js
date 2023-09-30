@@ -69,8 +69,22 @@ export default class Modal extends HTMLElement {
           </div>
         </span>
         <button class="close-btn reset-this">X</button>
-      </div>
+        </div>
+        <p class="link-copied-message hide">Link copied successfully!</p>
     `;
+
+    const copyBtn = this.shadow.querySelector(".copy-to-clipboard");
+    const linkCopiedMessageElement = this.shadow.querySelector(
+      ".link-copied-message"
+    );
+
+    copyBtn.addEventListener("click", (e) => {
+      navigator.clipboard.writeText(this.getAttribute("uploadedURLLink"));
+
+      linkCopiedMessageElement.classList.remove("hide");
+
+      setTimeout(() => linkCopiedMessageElement.classList.add("hide"), 3000);
+    });
 
     this.shadow.querySelector(".close-btn").addEventListener("click", () => {
       document.querySelector("modal-component-1").remove();
@@ -135,7 +149,7 @@ export default class Modal extends HTMLElement {
     }
 
     if (this.status === "finished") {
-      return `<button class="btn">Copy Link</button>
+      return `<button class="btn copy-to-clipboard">Copy Link</button>
                <button class="btn">Done</button>
               `;
     }

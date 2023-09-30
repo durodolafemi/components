@@ -7,7 +7,7 @@
     <script src="Modal.js" type="module" defer></script>
   </head>
   <body>
-    <!-- <modal-component-1 status="progress"></modal-component-1> -->
+    <modal-component-1 status="finished"></modal-component-1>
 
     <!-- This can be deleted. -->
     <!-- 
@@ -22,7 +22,7 @@
           - finished
     -->
 
-    <div id="modal-layer"></div>
+    <!-- <div id="modal-layer"></div>
 
     <h2>Choose the status of the upload</h2>
     <select title="status" name="status" id="status">
@@ -39,9 +39,13 @@
         const modal = document.createElement("modal-component-1");
 
         modal.setAttribute("status", e.target.value);
+        modal.setAttribute(
+          "uploadedURLLink",
+          "https://some-random-link-file.com"
+        );
 
         modalLayer.appendChild(modal);
       });
-    </script>
+    </script> -->
   </body>
 </html>

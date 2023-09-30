@@ -4,31 +4,28 @@
   box-sizing: border-box;
 }
 
-.modal-container {
+:host {
   font-family: "Montserrat", sans-serif;
+}
+
+.modal-container {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2rem;
   background: rgb(27, 28, 43);
-  background: -moz-linear-gradient(
-    45deg,
-    rgba(27, 28, 43, 1) 0%,
-    rgba(27, 28, 43, 1) 57%,
-    rgba(31, 42, 89, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    45deg,
-    rgba(27, 28, 43, 1) 0%,
-    rgba(27, 28, 43, 1) 57%,
-    rgba(31, 42, 89, 1) 100%
-  );
-  background: linear-gradient(
-    45deg,
-    rgba(27, 28, 43, 1) 0%,
-    rgba(27, 28, 43, 1) 57%,
-    rgba(31, 42, 89, 1) 100%
-  );
+  background: -moz-linear-gradient(45deg,
+      rgba(27, 28, 43, 1) 0%,
+      rgba(27, 28, 43, 1) 57%,
+      rgba(31, 42, 89, 1) 100%);
+  background: -webkit-linear-gradient(45deg,
+      rgba(27, 28, 43, 1) 0%,
+      rgba(27, 28, 43, 1) 57%,
+      rgba(31, 42, 89, 1) 100%);
+  background: linear-gradient(45deg,
+      rgba(27, 28, 43, 1) 0%,
+      rgba(27, 28, 43, 1) 57%,
+      rgba(31, 42, 89, 1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1b1c2b", endColorstr="#1f2a59", GradientType=1);
   max-width: 520px;
   padding: 2rem;
@@ -174,5 +171,12 @@ progress::-webkit-progress-value {
   background-color: transparent;
 }
 
-@media (pointer: coarse) {
+.link-copied-message {
+  text-align: center;
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+
+.hide{
+  display: none;
 }
